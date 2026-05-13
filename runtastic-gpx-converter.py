@@ -20,7 +20,10 @@ SOURCE_TYPE_TO_TCX_SPORT = {
     "cycling": "Biking",
 }
 
-# Fallback only when adidas does not provide a source GPX file with a type.
+# Fallback mapping for known adidas/runtastic sport_type_id values.
+# Prefer the activity type from the source GPX when it is available, because
+# that is the most precise type bundled with the export. This table is only
+# used when a readable source GPX type is missing.
 SPORT_TYPE_ID_TO_SOURCE_TYPE = {
     "1": "running",
     "3": "cycling",
